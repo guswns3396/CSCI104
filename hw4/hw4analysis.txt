@@ -1,0 +1,7 @@
+1) GOTO, GOSUB, and IF all take theta(log n) amount of runtime where n is the number of lines. Because the lines are stored in an ordered map, traversing through the map to find the line to jump to, given by "it = this->commands->find(this->jlnum->getLine());" on lines 72, 100, and 133 in command.cpp, takes theta(log n) time.
+
+2) Figuring out which command to jump to for RETURN takes theta(log n) time. This is because while finding out which line to jump to takes theta(1) time due to the usage of stack (line 165 in command.cpp), finding out the command using the line number through a map takes theta(log n) time (line 167 in command.cpp).
+
+3) Accessing / modifying the value of a variable takes theta(log n) time. This is because finding the value of the variable given its name in a map takes theta(log n) time as given by lines 43, 46 in arithmetic.cpp.
+
+4) Accessing / modifying the value of an array takes theta(log n) time. This is because finding the value of the variable given its name in a map takes theta(log n) time as given by lines 67, 75 in arithmetic.cpp.
